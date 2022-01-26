@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		6D64524927A2040100AD0733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64524827A2040100AD0733 /* AppDelegate.swift */; };
 		6D64524B27A2040100AD0733 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64524A27A2040100AD0733 /* SceneDelegate.swift */; };
-		6D64524D27A2040100AD0733 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64524C27A2040100AD0733 /* ViewController.swift */; };
-		6D64525027A2040100AD0733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D64524E27A2040100AD0733 /* Main.storyboard */; };
 		6D64525227A2040200AD0733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D64525127A2040200AD0733 /* Assets.xcassets */; };
 		6D64525527A2040200AD0733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D64525327A2040200AD0733 /* LaunchScreen.storyboard */; };
+		6D64525E27A204A400AD0733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D64525D27A204A400AD0733 /* Main.storyboard */; };
+		6D64526127A2065300AD0733 /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64526027A2065300AD0733 /* DeviceTableViewCell.swift */; };
+		6D64526627A20A4200AD0733 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64526527A20A4200AD0733 /* Device.swift */; };
+		6D64526927A20EDD00AD0733 /* DeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D64526827A20EDD00AD0733 /* DeviceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D64524527A2040100AD0733 /* Smart Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D64524827A2040100AD0733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D64524A27A2040100AD0733 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6D64524C27A2040100AD0733 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6D64524F27A2040100AD0733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D64525127A2040200AD0733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D64525427A2040200AD0733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D64525627A2040200AD0733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D64525D27A204A400AD0733 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6D64526027A2065300AD0733 /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		6D64526527A20A4200AD0733 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		6D64526827A20EDD00AD0733 /* DeviceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		6D64524727A2040100AD0733 /* Smart Home */ = {
 			isa = PBXGroup;
 			children = (
-				6D64524827A2040100AD0733 /* AppDelegate.swift */,
-				6D64524A27A2040100AD0733 /* SceneDelegate.swift */,
-				6D64524C27A2040100AD0733 /* ViewController.swift */,
-				6D64524E27A2040100AD0733 /* Main.storyboard */,
-				6D64525127A2040200AD0733 /* Assets.xcassets */,
-				6D64525327A2040200AD0733 /* LaunchScreen.storyboard */,
-				6D64525627A2040200AD0733 /* Info.plist */,
+				6D64526427A209D400AD0733 /* Models */,
+				6D64526227A2073300AD0733 /* Controllers */,
+				6D64525C27A2046C00AD0733 /* Resources */,
+				6D64525F27A204BC00AD0733 /* Views */,
 			);
 			path = "Smart Home";
+			sourceTree = "<group>";
+		};
+		6D64525C27A2046C00AD0733 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D64524827A2040100AD0733 /* AppDelegate.swift */,
+				6D64524A27A2040100AD0733 /* SceneDelegate.swift */,
+				6D64525127A2040200AD0733 /* Assets.xcassets */,
+				6D64525627A2040200AD0733 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D64525F27A204BC00AD0733 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D64525327A2040200AD0733 /* LaunchScreen.storyboard */,
+				6D64525D27A204A400AD0733 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D64526227A2073300AD0733 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D64526727A20C4600AD0733 /* ModelControllers */,
+				6D64526327A2073E00AD0733 /* ViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6D64526327A2073E00AD0733 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D64526027A2065300AD0733 /* DeviceTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6D64526427A209D400AD0733 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D64526527A20A4200AD0733 /* Device.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6D64526727A20C4600AD0733 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D64526827A20EDD00AD0733 /* DeviceController.swift */,
+			);
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D64525E27A204A400AD0733 /* Main.storyboard in Resources */,
 				6D64525527A2040200AD0733 /* LaunchScreen.storyboard in Resources */,
 				6D64525227A2040200AD0733 /* Assets.xcassets in Resources */,
-				6D64525027A2040100AD0733 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +192,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D64524D27A2040100AD0733 /* ViewController.swift in Sources */,
 				6D64524927A2040100AD0733 /* AppDelegate.swift in Sources */,
+				6D64526127A2065300AD0733 /* DeviceTableViewCell.swift in Sources */,
+				6D64526927A20EDD00AD0733 /* DeviceController.swift in Sources */,
 				6D64524B27A2040100AD0733 /* SceneDelegate.swift in Sources */,
+				6D64526627A20A4200AD0733 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6D64524E27A2040100AD0733 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6D64524F27A2040100AD0733 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6D64525327A2040200AD0733 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,7 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Smart Home/Info.plist";
+				INFOPLIST_FILE = "Smart Home/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Smart Home/Info.plist";
+				INFOPLIST_FILE = "Smart Home/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

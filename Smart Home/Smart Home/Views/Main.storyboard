@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qdq-oG-Mip">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Smart Home-->
+        <scene sceneID="1bK-Gi-Bar">
+            <objects>
+                <tableViewController id="DxR-Fs-13j" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vS5-GO-1jQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="XqT-zA-a4d" customClass="DeviceTableViewCell" customModule="Smart_Home" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="108"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XqT-zA-a4d" id="yMg-Zu-fbM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-Xg-QJt">
+                                            <rect key="frame" x="36" y="19" width="342" height="31"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCy-iw-b3B">
+                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-Gf-raa">
+                                                    <rect key="frame" x="293" y="0.0" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="powerSwitchToggled:" destination="XqT-zA-a4d" eventType="valueChanged" id="zL8-W6-bkp"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JJE-Xg-QJt" firstAttribute="top" secondItem="yMg-Zu-fbM" secondAttribute="topMargin" constant="8" id="cMu-e1-gQb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JJE-Xg-QJt" secondAttribute="trailing" constant="16" id="eqN-zd-A2v"/>
+                                        <constraint firstItem="JJE-Xg-QJt" firstAttribute="leading" secondItem="yMg-Zu-fbM" secondAttribute="leadingMargin" constant="16" id="iCQ-wg-6Y7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="deviceNameLabel" destination="xCy-iw-b3B" id="Rpt-Ll-FgS"/>
+                                    <outlet property="powerSwitchToggle" destination="MSQ-Gf-raa" id="voa-ns-pm2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DxR-Fs-13j" id="gYQ-vn-19E"/>
+                            <outlet property="delegate" destination="DxR-Fs-13j" id="RGr-Hv-7Hx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Smart Home" id="D6z-Gx-Pvp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="0ai-d2-tis">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="bTS-WG-0oP" id="j2B-im-tYV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i0b-dO-PEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bTS-WG-0oP" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-17" y="115"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kMm-qL-L9U">
+            <objects>
+                <navigationController id="qdq-oG-Mip" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ct0-So-4tQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DxR-Fs-13j" kind="relationship" relationship="rootViewController" id="1pZ-m1-XlC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j85-a3-Jk3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="115"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
