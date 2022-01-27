@@ -10,7 +10,7 @@
         <!--Smart Home-->
         <scene sceneID="1bK-Gi-Bar">
             <objects>
-                <tableViewController id="DxR-Fs-13j" sceneMemberID="viewController">
+                <tableViewController id="DxR-Fs-13j" customClass="DevicesTableViewController" customModule="Smart_Home" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vS5-GO-1jQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,16 +24,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JJE-Xg-QJt">
-                                            <rect key="frame" x="36" y="19" width="342" height="31"/>
+                                            <rect key="frame" x="36" y="19" width="342" height="62"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCy-iw-b3B">
-                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="62"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MSQ-Gf-raa">
-                                                    <rect key="frame" x="293" y="0.0" width="51" height="31"/>
+                                                    <rect key="frame" x="293" y="0.0" width="51" height="62"/>
                                                     <connections>
                                                         <action selector="powerSwitchToggled:" destination="XqT-zA-a4d" eventType="valueChanged" id="zL8-W6-bkp"/>
                                                     </connections>
@@ -45,6 +45,7 @@
                                         <constraint firstItem="JJE-Xg-QJt" firstAttribute="top" secondItem="yMg-Zu-fbM" secondAttribute="topMargin" constant="8" id="cMu-e1-gQb"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="JJE-Xg-QJt" secondAttribute="trailing" constant="16" id="eqN-zd-A2v"/>
                                         <constraint firstItem="JJE-Xg-QJt" firstAttribute="leading" secondItem="yMg-Zu-fbM" secondAttribute="leadingMargin" constant="16" id="iCQ-wg-6Y7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JJE-Xg-QJt" secondAttribute="bottom" constant="16" id="uLj-lx-We3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -61,13 +62,12 @@
                     <navigationItem key="navigationItem" title="Smart Home" id="D6z-Gx-Pvp">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="0ai-d2-tis">
                             <connections>
-                                <action selector="addButtonTapped:" destination="bTS-WG-0oP" id="61W-4z-Dhi"/>
+                                <action selector="addButtonTapped:" destination="DxR-Fs-13j" id="eI6-pJ-w1s"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0b-dO-PEX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="bTS-WG-0oP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-17" y="115"/>
         </scene>

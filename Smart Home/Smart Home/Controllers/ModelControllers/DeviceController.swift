@@ -8,7 +8,7 @@
 import Foundation
 
 class DeviceController {
- 
+    
     // MARK: -Properties
     
     /// Singleton

@@ -8,25 +8,24 @@
 import UIKit
 
 class DevicesTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return DeviceController.sharedInstance.deviceArray.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "deviceCell", for: indexPath) as? DeviceTableViewCell else { return UITableViewCell()}
         let deviceToUpdate = DeviceController.sharedInstance.deviceArray[indexPath.row]
         
-        // TODO UPDATE CELL
-        //cell.delegate = self
+        cell.delegate = self
         cell.updateViews(device: deviceToUpdate)
         
         return cell
@@ -48,13 +47,18 @@ class DevicesTableViewController: UITableViewController {
         alertController.addAction(confirmAction)
         present(alertController, animated: true)
     }
-
+    
     @IBAction func addButtonTapped(_ sender: Any) {
         presentNewDeviceAlertController()
     }
     
-    
-   
+} // End of class
 
-    
-} // ENd of class
+extension DevicesTableViewController: DeviceTableViewCellDelegate {
+    func isOnSwitchToggled(cell: DeviceTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let device = DeviceController.sharedInstance.deviceArray[indexPath.row]
+        DeviceController.sharedInstance.toggleIsOn(device: device)
+        cell.updateViews(device: device)
+    }
+}

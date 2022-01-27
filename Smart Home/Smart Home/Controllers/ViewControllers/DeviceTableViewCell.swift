@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol DeviceDelegate: AnyObject{
-    func setIsOnButtonWasTapped(cell: DeviceTableViewCell)
+protocol DeviceTableViewCellDelegate: AnyObject{
+    func isOnSwitchToggled(cell: DeviceTableViewCell)
 }
 
 class DeviceTableViewCell: UITableViewCell {
-
-   // MARK: - IBOutlets
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var deviceNameLabel: UILabel!
     @IBOutlet weak var powerSwitchToggle: UISwitch!
     
-    weak var delegate: DeviceDelegate?
+    weak var delegate: DeviceTableViewCellDelegate?
     
     // MARK: -Helper Function
     func updateViews(device: Device) {
@@ -26,11 +26,8 @@ class DeviceTableViewCell: UITableViewCell {
     }
     
     // MARK: - IBActions
-
-    @IBAction func powerSwitchToggled(_ sender: Any) {
-    }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
-        
+    @IBAction func powerSwitchToggled(_ sender: Any) {
+        delegate?.isOnSwitchToggled(cell: self)
     }
-}
+}// End of class 
