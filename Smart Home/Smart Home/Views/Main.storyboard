@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="XqT-zA-a4d" customClass="DeviceTableViewCell" customModule="Smart_Home" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deviceCell" rowHeight="108" id="XqT-zA-a4d" customClass="DeviceTableViewCell" customModule="Smart_Home" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XqT-zA-a4d" id="yMg-Zu-fbM">
@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" title="Smart Home" id="D6z-Gx-Pvp">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="0ai-d2-tis">
                             <connections>
-                                <action selector="addButtonTapped:" destination="bTS-WG-0oP" id="j2B-im-tYV"/>
+                                <action selector="addButtonTapped:" destination="bTS-WG-0oP" id="61W-4z-Dhi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

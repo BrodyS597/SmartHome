@@ -21,5 +21,6 @@ class DeviceTableViewCell: UITableViewCell {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
+        
     }
 }

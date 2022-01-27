@@ -11,10 +11,10 @@ class DeviceController {
  
     // MARK: -Properties
     
-    // MARK: -Singleton
+    /// Singleton
     static let sharedInstance = DeviceController()
     
-    // MARK: -Source of Truth
+    /// Source of Truth
     private(set) var deviceArray: [Device] = []
     
     // MARK: -Initializers
