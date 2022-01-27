@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qdq-oG-Mip">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tSM-Lr-UDG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,10 +72,80 @@
             </objects>
             <point key="canvasLocation" x="-17" y="115"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Master Power States-->
+        <scene sceneID="02V-UQ-ARW">
+            <objects>
+                <viewController id="OPv-SI-X1L" customClass="ToggleAllViewController" customModule="Smart_Home" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G40-i5-SG2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="66N-qA-iuj">
+                                <rect key="frame" x="128" y="403" width="158.5" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-5R-y1O">
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="31"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Turn All Devices ON"/>
+                                        <connections>
+                                            <action selector="turnAllOnButtonTapped:" destination="OPv-SI-X1L" eventType="touchUpInside" id="JPo-dN-de7"/>
+                                            <action selector="turnAllOnButtonTapped:" destination="yiu-Wd-yLy" eventType="touchUpInside" id="aKE-PJ-GYi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4I1-Qo-uoG">
+                                        <rect key="frame" x="0.0" y="59" width="158.5" height="31"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Turn All Devices OFF"/>
+                                        <connections>
+                                            <action selector="turnAllOffButtonTapped:" destination="yiu-Wd-yLy" eventType="touchUpInside" id="pgg-B9-VsB"/>
+                                            <action selector="turnAllOffButtonTapped:" destination="OPv-SI-X1L" eventType="touchUpInside" id="vFJ-yp-jVq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nhq-cw-41B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="66N-qA-iuj" firstAttribute="centerY" secondItem="G40-i5-SG2" secondAttribute="centerY" id="HBw-T0-Tw2"/>
+                            <constraint firstItem="66N-qA-iuj" firstAttribute="centerX" secondItem="G40-i5-SG2" secondAttribute="centerX" id="Mm1-lh-RWT"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Master Power States" image="lightbulb" catalog="system" selectedImage="lightbulb.fill" id="uLy-yw-5XB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BTb-Mm-5kR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yiu-Wd-yLy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1513" y="468"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Hf5-rg-dTW">
+            <objects>
+                <tabBarController id="tSM-Lr-UDG" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xX1-Gz-8uf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qdq-oG-Mip" kind="relationship" relationship="viewControllers" id="7B0-vJ-3kj"/>
+                        <segue destination="OPv-SI-X1L" kind="relationship" relationship="viewControllers" id="vuA-Dk-vB3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTk-YA-xfQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2280" y="44"/>
+        </scene>
+        <!--Devices-->
         <scene sceneID="kMm-qL-L9U">
             <objects>
                 <navigationController id="qdq-oG-Mip" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Devices" image="powerplug" catalog="system" selectedImage="powerplug.fill" id="fwj-3W-fPT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ct0-So-4tQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,8 +160,21 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lightbulb" catalog="system" width="113" height="128"/>
+        <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
+        <image name="powerplug" catalog="system" width="128" height="83"/>
+        <image name="powerplug.fill" catalog="system" width="128" height="81"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

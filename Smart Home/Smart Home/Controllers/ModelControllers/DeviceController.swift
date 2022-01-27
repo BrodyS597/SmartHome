@@ -35,6 +35,15 @@ class DeviceController {
         save()
     }
     
+    func toggleAllDevicesToOn () {
+        deviceArray.forEach({$0.isON = true})
+    }
+    
+    func toggleAllDevicesToOff () {
+        deviceArray.forEach({$0.isON = false})
+    }
+    
+    
     // MARK: - Persistance
     
     func save() {
