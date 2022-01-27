@@ -27,7 +27,7 @@ class DevicesTableViewController: UITableViewController {
         
         // TODO UPDATE CELL
         //cell.delegate = self
-        //cell.updateViews(device: deviceToUpdate)
+        cell.updateViews(device: deviceToUpdate)
         
         return cell
     }
